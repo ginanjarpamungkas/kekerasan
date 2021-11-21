@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="assets/css/animate.css">
 </head>
 <body>
+    <div id="blog_preloader_wrapper" style="display: none">
+        <div id="blog_preloader_box">
+             <div class="blog_loader">
+                 <div></div><div></div>
+             </div>
+        </div>
+   </div>
     <div class="container">
         <nav class="navbar navbar-expand-xl">
             <a class="navbar-brand" href="index.html"><img src="assets/images/logo-merah.png" alt="logo" class="d-inline-block align-top" width="200"></a>
@@ -38,7 +45,11 @@
     <div class="container" style="padding-bottom: 5rem;">
         <div class="victim-story pt-5 mt-3 victim-story-effect hide">
             <h3 class="heading-title pb-5">Daftar Korban</h3>
-            <div class="row mb-5" id="container-victim-story"></div>
+            <div class="container">
+                <div class="row content">
+                </div>
+                <div class="paginator"></div>
+            </div>
         </div>
     </div>
     <div class="footer">
@@ -87,35 +98,35 @@
                     <div class="col-lg-9">
                         <div class="row">
                             <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Nama Korban</h4>
+                                <h4>Nama Korban</h4>
                                 <h5 class="nama-korban">N/A</h5>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Profesi Korban</h4>
+                                <h4>Profesi Korban</h4>
                                 <h5 class="profesi-korban">N/A</h5>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Kota Asal</h4>
+                                <h4>Kota Asal</h4>
                                 <h5 class="asal-korban">N/A</h5>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Tanggal</h4>
+                                <h4>Tanggal</h4>
                                 <h5 class="tanggal">N/A</h5>
                             </div>
                             <div class="col-12 mb-3">
-                                <h4 style="font-weight:bold">Jenis Kekerasan</h4>
+                                <h4>Jenis Kekerasan</h4>
                                 <h5 class="kekerasan">N/A</h5>
                             </div>
                             <div class="col-12 mb-3">
-                                <h4 style="font-weight:bold">Media</h4>
+                                <h4>Media</h4>
                                 <h5 class="media">N/A</h5>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Pelaku</h4>
+                                <h4>Pelaku</h4>
                                 <h5 class="pelaku">N/A</h5>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Profesi Pelaku</h4>
+                                <h4>Profesi Pelaku</h4>
                                 <h5 class="profesi-pelaku">N/A</h5>
                             </div>
                         </div>
@@ -139,65 +150,153 @@
     var parsedCSV;
     d3.text("database.csv", function(data) {
         parsedCSV = d3.dsv(';').parseRows(data); 
-        parsedCSV.forEach(function(d,idx) {
-            if (idx < 10) {
-                var tgl_kejadian = moment(d[2], 'DD/MM/YYYY')
-                $("#container-victim-story").append('<div class="col-sm-12 col-lg-6 mt-3"><div class="container-story"><div class="container-story-image" style="background-image: url(assets/images/user.png);background-position: center center;background-repeat: no-repeat;background-size: cover;place-self: center;flex-wrap: wrap;padding:10px;box-sizing:border-box"><div class="mt-5"></div><p>'+tgl_kejadian.format("DD MMM YYYY")+'</p></div><div class="container-story-detail"><div><a href="#" class="judul">'+d[1]+'</a><p>'+d[3]+'<br>'+d[4]+'</p><center><a class="readmore mt-2" href="cerita-korban.html">selengkapnya</a></center></div></div></div></div>')
+        const listArray = [];
+            $.each(parsedCSV,function(i,d) {
+            if (d[6] != '') {
+                var nama_korban = d[6]
+            }else{
+                var nama_korban = 'N/A'
             }
-            if (idx < 50) {
-                var tgl_kejadian = moment(d[2], 'DD/MM/YYYY')
-                $("#container-victim").append("<li><a href='javascript:void(0)' data-nama='"+d[6]+"' data-profesi='"+d[11]+"' data-asal='"+d[8]+"' data-tanggal='"+tgl_kejadian.format("DD-MM-YYYY")+"' data-kekerasan='"+d[4]+"' data-media='"+d[12]+"' data-pelaku='"+d[17]+"' data-profesipelaku='"+d[23]+"' class='btn-modal'><img src='assets/images/user.png'></a></li>")
+            if (d[11] != '') {
+                var profesi_korban = d[11]
+            }else{
+                var profesi_korban = 'N/A'
             }
-            if (idx >= 50 && idx < 60) {
-                $("#container-victim").append("<li><a href='javascript:void(0)' class='semu'></a></li>")
+            if (d[8] != '') {
+                var asal_korban = d[8]
+            }else{
+                var asal_korban = 'N/A'
             }
-        })
-        $(".total-kasus").text(new Number(parsedCSV.length).toLocaleString('id-ID', {maximumFractionDigits:2}))
-    });
+            if (kekerasan != '') {
+                var kekerasan = d[4]
+            }else{
+                var kekerasan = 'N/A'
+            }
 
-    $(document).on('click','.btn-modal',function(e) {
-        if ($(this).data('nama') != '') {
-            $('.nama-korban').html($(this).data('nama'))
-        }else{
-            $('.nama-korban').html('N/A')
+            var tgl_kejadian = moment(d[2], 'DD/MM/YYYY')
+            
+            listArray.push('<div class="col-lg-12 col-md-6 col-sm-12"><div class="victim-container"><div class="row"><div class="col-sm-12 col-md-12 col-lg-3"><a href="tes" style="display: block;"><img src="assets/images/user.png" alt=""></a></div><div class="col-sm-12 col-md-12 col-lg-9"><div class="row" style="padding: 10px;"><div class="col-12 col-md-12 col-lg-8 mb-3"><h4>Nama Korban</h4><a href=""><h5 class="nama-korban">'+nama_korban+'</h5></a></div><div class="col-12 col-md-6 col-lg-4 mb-3"><h4>Profesi Korban</h4><h5 class="profesi-korban">'+profesi_korban+'</h5></div><div class="col-12 col-md-6 col-lg-4 mb-3"><h4>Kota Asal</h4><h5 class="asal-korban">'+asal_korban+'</h5></div><div class="col-12 col-md-6 col-lg-4 mb-3"><h4>Tanggal</h4><h5 class="tanggal">'+tgl_kejadian.format("DD-MM-YYYY")+'</h5></div><div class="col-12 col-md-6 col-lg-4 mb-3"><h4>Jenis Kekerasan</h4><h5 class="kekerasan">'+kekerasan+'</h5></div></div></div></div></div></div>')
+        })
+
+        const numberOfItems = listArray.length
+        const numberPerPage = 10
+        const currentPage = 1
+
+        const numberOfPages = Math.ceil(numberOfItems/numberPerPage)
+
+        function accomodatePage(clickedPage) {
+            if (clickedPage < 1) { return clickedPage + 1}
+            if (clickedPage > numberOfPages) { return clickedPage -1}
+            return clickedPage
         }
-        if ($(this).data('profesi') != '') {
-            $('.profesi-korban').html($(this).data('profesi'))
-        }else{
-            $('.profesi-korban').html('N/A')
+
+        function buildPagination(clickedPage) {
+            $('.paginator').empty()
+            const currPageNum = accomodatePage(clickedPage)
+            if (numberOfPages >= 3) {
+                if (currPageNum == 1) {
+                    $('.paginator').append(`<button class="btn btn-primary" disabled value="${currPageNum-1}">PREVIOUS</button>`)
+                    for (let i=0; i<5; i++) {
+                        if (currPageNum+i == currPageNum) {
+                            var btn = 'btn-primary'
+                            var hide = 'disabled'
+                        } else {
+                            var btn = 'btn-secondary'
+                            var hide = ''
+                        }
+                        $('.paginator').append(`<button class="btn ${btn}" ${hide} value="${currPageNum+i}">${currPageNum+i}</button>`)
+                    }
+                    $('.paginator').append(`<button class="btn btn-primary" value="${currPageNum+1}">NEXT</button>`)
+                }
+                if (currPageNum == 2) {
+                    $('.paginator').append(`<button class="btn btn-primary" value="${currPageNum-1}">PREVIOUS</button>`)
+                    for (let i=-1; i<4; i++) {
+                        if (currPageNum+i == currPageNum) {
+                            var btn = 'btn-primary'
+                            var hide = 'disabled'
+                        } else {
+                            var btn = 'btn-secondary'
+                            var hide = ''
+                        }
+                        $('.paginator').append(`<button class="btn ${btn}" ${hide} value="${currPageNum+i}">${currPageNum+i}</button>`)
+                    }
+                    $('.paginator').append(`<button class="btn btn-primary" value="${currPageNum+1}">NEXT</button>`)
+                }
+
+                if (currPageNum > 2 && currPageNum < numberOfPages-1) {
+                    $('.paginator').append(`<button class="btn btn-primary" value="${currPageNum-1}">PREVIOUS</button>`)
+                    for (let i=-2; i<3; i++) {
+                        if (currPageNum+i == currPageNum) {
+                            var btn = 'btn-primary'
+                            var hide = 'disabled'
+                        } else {
+                            var btn = 'btn-secondary'
+                            var hide = ''
+                        }
+                        $('.paginator').append(`<button class="btn ${btn}" ${hide} value="${currPageNum+i}">${currPageNum+i}</button>`)
+                    }
+                    $('.paginator').append(`<button class="btn btn-primary" value="${currPageNum+1}">NEXT</button>`)
+                }
+
+                if (currPageNum == numberOfPages-1) {
+                    $('.paginator').append(`<button class="btn btn-primary" value="${currPageNum-1}">PREVIOUS</button>`)
+                    for (let i=-3; i<2; i++) {
+                        if (currPageNum+i == currPageNum) {
+                            var btn = 'btn-primary'
+                            var hide = 'disabled'
+                        } else {
+                            var btn = 'btn-secondary'
+                            var hide = ''
+                        }
+                        $('.paginator').append(`<button class="btn ${btn}" ${hide} value="${currPageNum+i}">${currPageNum+i}</button>`)
+                    }
+                    $('.paginator').append(`<button class="btn btn-primary" value="${currPageNum+1}">NEXT</button>`)
+                }
+
+                if (currPageNum == numberOfPages) {
+                    $('.paginator').append(`<button class="btn btn-primary" value="${currPageNum-1}">PREVIOUS</button>`)
+                    for (let i=-4; i < 1; i++) {
+                        if (currPageNum+i == currPageNum) {
+                            var btn = 'btn-primary'
+                            var hide = 'disabled'
+                        } else {
+                            var btn = 'btn-secondary'
+                            var hide = ''
+                        }
+                        $('.paginator').append(`<button class="btn ${btn}" ${hide} value="${currPageNum+i}">${currPageNum+i}</button>`)
+                    }
+                    $('.paginator').append(`<button class="btn btn-primary" disabled value="${currPageNum+1}">NEXT</button>`)
+                }
+                
+            } else {
+                for (let i=0; i<numberOfPages; i++) {
+                    $('.paginator').append(`<button class="btn btn-primary" value="${i+1}">${i+1}</button>`)
+                }
+            }
         }
-        if ($(this).data('asal') != '') {
-            $('.asal-korban').html($(this).data('asal'))
-        }else{
-            $('.asal-korban').html('N/A')
+
+        function buildPage(currPage) {
+            const trimStart = (currPage-1)*numberPerPage
+            const trimEnd = trimStart + numberPerPage
+            $('.content').empty().append(listArray.slice(trimStart, trimEnd))
         }
-        if ($(this).data('tanggal') != '') {
-            $('.tanggal').html($(this).data('tanggal'))
-        }else{
-            $('.tanggal').html($(this).data('tanggal'))
-        }
-        if ($(this).data('kekerasan') != '') {
-            $('.kekerasan').html($(this).data('kekerasan'))
-        }else{
-            $('.kekerasan').html('N/A')
-        }
-        if ($(this).data('media') != '') {
-            $('.media').html($(this).data('media'))
-        }else{
-            $('.media').html('N/A')
-        }
-        if ($(this).data('pelaku') != '') {
-            $('.pelaku').html($(this).data('pelaku'))
-        }else{
-            $('.pelaku').html('N/A')
-        }
-        if ($(this).data('profesipelaku') != '') {
-            $('.profesi-pelaku').html($(this).data('profesipelaku'))
-        }else{
-            $('.profesi-pelaku').html('N/A')
-        }
-        $('#modal-detail').modal('show')
-    })
+
+        $(document).ready(function(){
+            buildPage(1)
+            buildPagination(currentPage)
+
+            $('.paginator').on('click', 'button', function() {
+                $("#blog_preloader_box").show();
+                $("#blog_preloader_wrapper").show();
+                var clickedPage = parseInt($(this).val())
+                buildPagination(clickedPage)
+                buildPage(clickedPage)
+                $('html, body').animate({scrollTop:0}, 'slow');
+                $("#blog_preloader_box").fadeOut();
+                $("#blog_preloader_wrapper").delay(500).fadeOut("slow");
+            });
+        });
+    });
 </script>
 </body>
 </html>

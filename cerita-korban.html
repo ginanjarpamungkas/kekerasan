@@ -5,6 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kekerasan</title>
+    <meta http-equiv="pragma" content="no cache">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="language" content="id" />
+    <meta name="title" content="Kekerasan"/>
+    <meta name="description" content="Deskripsi kekerasan" />
+    <meta name="author" content="Tempo.co">
+    <meta name="keywords" content="cop26">
+    <meta name="copyright" content="">
+    <meta name="coverage" content="wordWide">
+    <meta name="creation date" content="2020-07-16">
+    <meta name="rating" content="General">
+    <meta name="robots" content="follow">
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Kekerasan"/>
+    <meta property="og:description" content="Deskripsi kekerasan" />
+    <meta property="og:image" content="assets/images/bg.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kekerasan" />
+    <meta name="twitter:description" content="Deskripsi kekerasan" />
+    <meta name="twitter:image:src" content="assets/images/bg.png">
+    <meta name="twitter:image:width" content="650" />
+    <meta name="twitter:image:height" content="433" />
+    <meta property="fb:app_id" content="332404380172618" />
+    <meta property="fb:pages" content="160355148441">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animate.css">
@@ -71,63 +98,6 @@
             </section>
         </div>
     </div>
-
-<div class="modal fade" id="modal-detail" tabindex="-1" role="dialog" aria-labelledby="modal-detail-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #1d2c48 !important;">
-                <h4 class="modal-title m-0" id="modal-detail-title" style="color: #fff;">Detail Kekerasan</h4>
-                <button type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #fff;">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-lg-3 text-center mb-3">
-                        <img src="assets/images/user.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-lg-9">
-                        <div class="row">
-                            <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Nama Korban</h4>
-                                <h5 class="nama-korban">N/A</h5>
-                            </div>
-                            <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Profesi Korban</h4>
-                                <h5 class="profesi-korban">N/A</h5>
-                            </div>
-                            <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Kota Asal</h4>
-                                <h5 class="asal-korban">N/A</h5>
-                            </div>
-                            <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Tanggal</h4>
-                                <h5 class="tanggal">N/A</h5>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <h4 style="font-weight:bold">Jenis Kekerasan</h4>
-                                <h5 class="kekerasan">N/A</h5>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <h4 style="font-weight:bold">Media</h4>
-                                <h5 class="media">N/A</h5>
-                            </div>
-                            <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Pelaku</h4>
-                                <h5 class="pelaku">N/A</h5>
-                            </div>
-                            <div class="col-12 col-md-6 mb-3">
-                                <h4 style="font-weight:bold">Profesi Pelaku</h4>
-                                <h5 class="profesi-pelaku">N/A</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/d3.js"></script>
@@ -144,60 +114,8 @@
                 var tgl_kejadian = moment(d[2], 'DD/MM/YYYY')
                 $("#container-victim-story").append('<div class="col-sm-12 col-lg-6 mt-3"><div class="container-story"><div class="container-story-image" style="background-image: url(assets/images/user.png);background-position: center center;background-repeat: no-repeat;background-size: cover;place-self: center;flex-wrap: wrap;padding:10px;box-sizing:border-box"><div class="mt-5"></div><p>'+tgl_kejadian.format("DD MMM YYYY")+'</p></div><div class="container-story-detail"><div><a href="#" class="judul">'+d[1]+'</a><p>'+d[3]+'<br>'+d[4]+'</p><center><a class="readmore mt-2" href="cerita-korban.html">selengkapnya</a></center></div></div></div></div>')
             }
-            if (idx < 50) {
-                var tgl_kejadian = moment(d[2], 'DD/MM/YYYY')
-                $("#container-victim").append("<li><a href='javascript:void(0)' data-nama='"+d[6]+"' data-profesi='"+d[11]+"' data-asal='"+d[8]+"' data-tanggal='"+tgl_kejadian.format("DD-MM-YYYY")+"' data-kekerasan='"+d[4]+"' data-media='"+d[12]+"' data-pelaku='"+d[17]+"' data-profesipelaku='"+d[23]+"' class='btn-modal'><img src='assets/images/user.png'></a></li>")
-            }
-            if (idx >= 50 && idx < 60) {
-                $("#container-victim").append("<li><a href='javascript:void(0)' class='semu'></a></li>")
-            }
         })
-        $(".total-kasus").text(new Number(parsedCSV.length).toLocaleString('id-ID', {maximumFractionDigits:2}))
     });
-
-    $(document).on('click','.btn-modal',function(e) {
-        if ($(this).data('nama') != '') {
-            $('.nama-korban').html($(this).data('nama'))
-        }else{
-            $('.nama-korban').html('N/A')
-        }
-        if ($(this).data('profesi') != '') {
-            $('.profesi-korban').html($(this).data('profesi'))
-        }else{
-            $('.profesi-korban').html('N/A')
-        }
-        if ($(this).data('asal') != '') {
-            $('.asal-korban').html($(this).data('asal'))
-        }else{
-            $('.asal-korban').html('N/A')
-        }
-        if ($(this).data('tanggal') != '') {
-            $('.tanggal').html($(this).data('tanggal'))
-        }else{
-            $('.tanggal').html($(this).data('tanggal'))
-        }
-        if ($(this).data('kekerasan') != '') {
-            $('.kekerasan').html($(this).data('kekerasan'))
-        }else{
-            $('.kekerasan').html('N/A')
-        }
-        if ($(this).data('media') != '') {
-            $('.media').html($(this).data('media'))
-        }else{
-            $('.media').html('N/A')
-        }
-        if ($(this).data('pelaku') != '') {
-            $('.pelaku').html($(this).data('pelaku'))
-        }else{
-            $('.pelaku').html('N/A')
-        }
-        if ($(this).data('profesipelaku') != '') {
-            $('.profesi-pelaku').html($(this).data('profesipelaku'))
-        }else{
-            $('.profesi-pelaku').html('N/A')
-        }
-        $('#modal-detail').modal('show')
-    })
 </script>
 </body>
 </html>

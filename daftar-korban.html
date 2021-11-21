@@ -5,6 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kekerasan</title>
+    <meta http-equiv="pragma" content="no cache">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="language" content="id" />
+    <meta name="title" content="Kekerasan"/>
+    <meta name="description" content="Deskripsi kekerasan" />
+    <meta name="author" content="Tempo.co">
+    <meta name="keywords" content="cop26">
+    <meta name="copyright" content="">
+    <meta name="coverage" content="wordWide">
+    <meta name="creation date" content="2020-07-16">
+    <meta name="rating" content="General">
+    <meta name="robots" content="follow">
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Kekerasan"/>
+    <meta property="og:description" content="Deskripsi kekerasan" />
+    <meta property="og:image" content="assets/images/bg.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kekerasan" />
+    <meta name="twitter:description" content="Deskripsi kekerasan" />
+    <meta name="twitter:image:src" content="assets/images/bg.png">
+    <meta name="twitter:image:width" content="650" />
+    <meta name="twitter:image:height" content="433" />
+    <meta property="fb:app_id" content="332404380172618" />
+    <meta property="fb:pages" content="160355148441">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animate.css">
@@ -291,7 +318,8 @@
                 var clickedPage = parseInt($(this).val())
                 buildPagination(clickedPage)
                 buildPage(clickedPage)
-                $('html, body').animate({scrollTop:0}, 'slow');
+                // $('html, body').animate({scrollTop:0}, 'slow');
+                $(window).scrollTop(0);
                 $("#blog_preloader_box").fadeOut();
                 $("#blog_preloader_wrapper").delay(500).fadeOut("slow");
             });

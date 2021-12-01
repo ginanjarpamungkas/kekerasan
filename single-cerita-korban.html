@@ -76,9 +76,9 @@
     </div>
     <span class="victim-story-trigger"></span>
     <div class="container" style="padding-bottom: 5rem;">
-        <div class="victim-story pt-5 mt-3 victim-story-effect">
-            <!-- <h3 class="heading-title pb-5 hide">Cerita Korban</h3> -->
-            <div class="row mb-5 hide" id="container-victim-story">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 mx-auto">
+                <p class="desc"></p>
             </div>
         </div>
     </div>
@@ -117,9 +117,8 @@
     d3.text("database.csv", function(data) {
         parsedCSV = d3.dsv(';').parseRows(data); 
         parsedCSV.forEach(function(d,idx) {
-            if (idx < 10) {
-                var tgl_kejadian = moment(d[2], 'DD/MM/YYYY')
-                $("#container-victim-story").append('<div class="col-xs-12 col-lg-6 mt-5"><div class="image-link"><a href="single-cerita-korban.html"><img src="assets/images/bg.png" alt="" style="width: 100%;"></a></div><a href="single-cerita-korban.html" class="title-link">'+d[4]+'</a><p>'+d[8]+'</p></div>')
+            if (idx < 1) {
+                $('.desc').text(d[5])
             }
         })
         $(".total-kasus").text(new Number(parsedCSV.length).toLocaleString('id-ID', {maximumFractionDigits:2}))

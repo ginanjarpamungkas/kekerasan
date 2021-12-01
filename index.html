@@ -38,17 +38,15 @@
 </head>
 <body>
     <div class="header">
-        <div class="bg-header"></div>
         <div class="container">
             <nav class="navbar navbar-expand-xl">
                 <a class="navbar-brand" href="index.html"><img src="assets/images/logo-merah.png" alt="logo" class="d-inline-block align-top" width="200"></a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="outline: none !important;">
                     <span class="navbar-toggler-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" class="cookie_close_icon" viewBox="0 0 32 32"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M19.803,16.000 L31.211,4.592 C32.261,3.542 32.261,1.839 31.211,0.789 C30.161,-0.261 28.459,-0.261 27.408,0.789 L16.000,12.197 L4.591,0.789 C3.541,-0.261 1.839,-0.261 0.789,0.789 C-0.261,1.839 -0.261,3.542 0.789,4.592 L12.197,16.000 L0.789,27.408 C-0.261,28.459 -0.261,30.161 0.789,31.211 C1.839,32.261 3.541,32.261 4.591,31.211 L16.000,19.803 L27.408,31.211 C28.458,32.261 30.161,32.261 31.211,31.211 C32.261,30.161 32.261,28.459 31.211,27.408 L19.803,16.000 Z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" class="cookie_open_icon" viewBox="0 0 13 13"><path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M0.001,10.115 L0.001,7.969 L13.000,7.969 L13.000,10.115 L0.001,10.115 ZM3.649,6.028 L3.649,3.881 L12.992,3.881 L12.992,6.028 L3.649,6.028 ZM0.001,-0.002 L13.000,-0.002 L13.000,2.145 L0.001,2.145 L0.001,-0.002 ZM12.992,13.998 L3.649,13.998 L3.649,11.853 L12.992,11.853 L12.992,13.998 Z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" class="cookie_close_icon" viewBox="0 0 32 32"><path fill-rule="evenodd"  fill="#18191f" d="M19.803,16.000 L31.211,4.592 C32.261,3.542 32.261,1.839 31.211,0.789 C30.161,-0.261 28.459,-0.261 27.408,0.789 L16.000,12.197 L4.591,0.789 C3.541,-0.261 1.839,-0.261 0.789,0.789 C-0.261,1.839 -0.261,3.542 0.789,4.592 L12.197,16.000 L0.789,27.408 C-0.261,28.459 -0.261,30.161 0.789,31.211 C1.839,32.261 3.541,32.261 4.591,31.211 L16.000,19.803 L27.408,31.211 C28.458,32.261 30.161,32.261 31.211,31.211 C32.261,30.161 32.261,28.459 31.211,27.408 L19.803,16.000 Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" class="cookie_open_icon" viewBox="0 0 13 13"><path fill-rule="evenodd" fill="#18191f" d="M0.001,10.115 L0.001,7.969 L13.000,7.969 L13.000,10.115 L0.001,10.115 ZM3.649,6.028 L3.649,3.881 L12.992,3.881 L12.992,6.028 L3.649,6.028 ZM0.001,-0.002 L13.000,-0.002 L13.000,2.145 L0.001,2.145 L0.001,-0.002 ZM12.992,13.998 L3.649,13.998 L3.649,11.853 L12.992,11.853 L12.992,13.998 Z"></path></svg>
                     </span>
                 </button>
-              
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item active">
@@ -63,33 +61,63 @@
                     </ul>
                 </div>
               </nav>
-              <div class="mt-25">
-                  <span class="header-title">Judul Artikel</span>
-                  <p>Terdapat <font class="total-kasus"></font> kasus kekerasan sepanjang tahun 2016-2020.<br>Ibu rumah tangga, konsumen, buruh, jurnalis, aktivis, akademisi, seniman, sastrawan bergiliran jadi korban. Apapun profesimu, semua bisa kena. Ayo simak kisah-kisah korban dan bantu suarakan bersama agar kekerasan bisa dihindari.</p>
+              <div class="row">
+                    <div class="col-xs-12 col-md-6 col-lg-6">
+                        <h2 class="header-title hide">Workspace that inspire</h2>
+                        <p class="hide">Terdapat <font class="total-kasus"></font> kasus kekerasan sepanjang tahun 2016-2020. Ibu rumah tangga, konsumen, buruh, jurnalis, aktivis, akademisi, seniman, sastrawan bergiliran jadi korban. Apapun profesimu, semua bisa kena. Ayo simak kisah-kisah korban dan bantu suarakan bersama agar kekerasan bisa dihindari.</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-6">
+                        <div class="image-container">
+                            <img class="hide image" src="assets/images/bg.png" alt="">
+                        </div>
+                    </div>
               </div>
         </div>
     </div>
     <div class="container" style="padding-bottom: 5rem;">
         <div class="victim pt-5 victim-trigger">
             <div class="victim-effect hide">
-                <ol id="container-victim"></ol>
+                <h5 class="section-title">Fasten your webiste creation process with Landify UI Kit</h5>
+                <p class="description-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt unde distinctio provident quis.</p>
+                <ol id="container-victim-first"></ol>
+                <ol id="container-victim-second"></ol>
             </div>
             <div class="victim-count-trigger"></div>
-            <div class="row victim-count-effect hide">
-                <div class="col-sm-12 col-lg-4"><div class="line"></div></div>
-                <div class="col-sm-12 col-lg-4"><center><p><font class="total-kasus"></font> Korban</p></center></div>
-                <div class="col-sm-12 col-lg-4"><div class="line"></div></div>
-            </div>
-            <div class="mt-5 victim-count-effect hide">
-                <center><a href="daftar-korban.html">selengkapnya</a></center>
+
+            <div class="victim-count-effect hide" style="margin-top: 5rem;">
+                <center><a href="daftar-korban.html" class="readmore">selengkapnya</a></center>
             </div>
             <div class="victim-story-trigger"></div>
         </div>
-        <div class="victim-story pt-5 mt-3 victim-story-effect hide">
-            <div class="row mb-5" id="container-victim-story"></div>
-            <div class="mt-5">
-                <center><a href="cerita-korban.html">selengkapnya</a></center>
+        <div class="victim-story pt-5 mt-3 victim-story-effect"> 
+            <h5 style="text-align: left;margin: 0;" class="section-title hide">Trying is Believing</h5>
+            <p style="text-align: left;margin: 1rem 0;" class="description-title hide">See what people are saying about our unique and effective formulas.</p>
+            <div class="mb-5 hide" id="container-victim-story">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <a href="single-cerita-korban.html" class="image-link">
+                            <img class="image" src="assets/images/bg.png" alt="" style="width: 100%;">
+                        </a>
+                        <a href="single-cerita-korban.html" class="title-link">Title is here</a>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto neque voluptates accusantium alias?</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <a href="single-cerita-korban.html" class="image-link">
+                            <img class="image" src="assets/images/bg.png" alt="" style="width: 100%;">
+                        </a>
+                        <a href="single-cerita-korban.html" class="title-link">Title is here</a>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto neque voluptates accusantium alias?</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-4">
+                        <a href="single-cerita-korban.html" class="image-link">
+                            <img class="image" src="assets/images/bg.png" alt="" style="width: 100%;">
+                        </a>
+                        <a href="single-cerita-korban.html" class="title-link">Title is here</a>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto neque voluptates accusantium alias?</p>
+                    </div>
+                </div>
             </div>
+            <a style="float: right;margin-top: 0;" class="readmore" href="cerita-korban.html">selengkapnya</a>
         </div>
     </div>
     <div class="footer">
@@ -113,24 +141,17 @@
                     </div>
                 </div>
             </section>
-            <section style="background-color: #000;transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;">
-                <div style="min-height: 35px;">
-                    <div class="container">
-                        <p style="color: #fff;font-family: poppins,Sans-serif;font-size: 14px;font-weight: 400;margin: 0;">Data Kekerasan</p>
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
 
 <div class="modal fade" id="modal-detail" tabindex="-1" role="dialog" aria-labelledby="modal-detail-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius:12px">
             <div class="modal-header" style="background-color: #1d2c48 !important;">
                 <h4 class="modal-title m-0" id="modal-detail-title" style="color: #fff;">Detail Kekerasan</h4>
                 <button type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #fff;">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="background-color: #eae8e5;">
                 <div class="row">
                     <div class="col-lg-3 text-center mb-3">
                         <img src="assets/images/user.png" alt="" class="img-fluid">
@@ -173,8 +194,8 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
+            <div class="modal-footer" style="background-color: #eae8e5;">
+                <button type="button" class="btn readmore" data-dismiss="modal" style="margin-top: 0;">Tutup</button>
             </div>
         </div>
     </div>
@@ -190,19 +211,18 @@
     var parsedCSV;
     d3.text("database.csv", function(data) {
         parsedCSV = d3.dsv(';').parseRows(data); 
+        $("#container-victim-second").append("<li class='null'></li>")
         parsedCSV.forEach(function(d,idx) {
-            if (idx < 10) {
+            if (idx < 8) {
                 var tgl_kejadian = moment(d[2], 'DD/MM/YYYY')
-                $("#container-victim-story").append('<div class="col-sm-12 col-lg-6 mt-3"><div class="container-story"><div class="container-story-image" style="background-image: url(assets/images/user.png);background-position: center center;background-repeat: no-repeat;background-size: cover;place-self: center;flex-wrap: wrap;padding:10px;box-sizing:border-box"><div class="mt-5"></div><p>'+tgl_kejadian.format("DD MMM YYYY")+'</p></div><div class="container-story-detail"><div><a href="#" class="judul">'+d[1]+'</a><p>'+d[3]+'<br>'+d[4]+'</p><center><a class="readmore mt-2" href="cerita-korban.html">selengkapnya</a></center></div></div></div></div>')
+                $("#container-victim-first").append("<li><a href='javascript:void(0)' data-nama='"+d[6]+"' data-profesi='"+d[11]+"' data-asal='"+d[8]+"' data-tanggal='"+tgl_kejadian.format("DD-MM-YYYY")+"' data-kekerasan='"+d[4]+"' data-media='"+d[12]+"' data-pelaku='"+d[17]+"' data-profesipelaku='"+d[23]+"' class='btn-modal'><img src='assets/images/user.png'></a></li>")
             }
-            if (idx < 50) {
+            if (idx > 8 && idx < 15) {
                 var tgl_kejadian = moment(d[2], 'DD/MM/YYYY')
-                $("#container-victim").append("<li><a href='javascript:void(0)' data-nama='"+d[6]+"' data-profesi='"+d[11]+"' data-asal='"+d[8]+"' data-tanggal='"+tgl_kejadian.format("DD-MM-YYYY")+"' data-kekerasan='"+d[4]+"' data-media='"+d[12]+"' data-pelaku='"+d[17]+"' data-profesipelaku='"+d[23]+"' class='btn-modal'><img src='assets/images/user.png'></a></li>")
-            }
-            if (idx >= 50 && idx < 60) {
-                $("#container-victim").append("<li><a href='javascript:void(0)' class='semu'></a></li>")
+                $("#container-victim-second").append("<li><a href='javascript:void(0)' data-nama='"+d[6]+"' data-profesi='"+d[11]+"' data-asal='"+d[8]+"' data-tanggal='"+tgl_kejadian.format("DD-MM-YYYY")+"' data-kekerasan='"+d[4]+"' data-media='"+d[12]+"' data-pelaku='"+d[17]+"' data-profesipelaku='"+d[23]+"' class='btn-modal'><img src='assets/images/user.png'></a></li>")
             }
         })
+        $("#container-victim-second").append("<li class='null'></li>")
         $(".total-kasus").text(new Number(parsedCSV.length).toLocaleString('id-ID', {maximumFractionDigits:2}))
     });
 

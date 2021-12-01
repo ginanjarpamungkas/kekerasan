@@ -1,3 +1,4 @@
+html{overflow-x: hidden;}
 body{background-color: #eae8e5;scroll-behavior: smooth;color: #18191f;}
 a {text-decoration: none !important;}
 /* .bg-header{position: absolute;top: 0;left: 0;right: 0;bottom: 0;background: rgb(0,0,0,0.5);} */
